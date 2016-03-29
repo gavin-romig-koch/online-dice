@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      >
+
+<head>
+  <title>Dirty World Dice</title>
+
+  <script src="dom.js"></script>
+  <script src="nwod-dice.js"></script>
+  <script src="prototype.js"></script>
+  <script src="dirty.js"></script>
+  <style>
+    .left  { padding-right: 4em; }
+    .right { padding-left: 4em; }
+  </style>
+      
+</head>
+<body onload="start()">
+
+  <div align="center">
+    <div id="rollresult"></div>
+
+    <div id="rollinput">
+      <span>
+        <input type="button" value="Roll" onclick="dirty_world_button_click(this)"></input>
+        Identity: <input id="Identity" type="text" value="0"></input>
+        Quality: <input id="Quality" type="text" value="0"></input>
+        Bonus: <input id="Bonus" type="text" value="0"></input>
+      </span>
+    </div>
+    <p>
+      <div id="setIdentity">
+        <input type="button" value="Identity 0" onclick="SetValue('Identity',0)"></input>
+        <input type="button" value="Identity 1" onclick="SetValue('Identity',1)"></input>
+        <input type="button" value="Identity 2" onclick="SetValue('Identity',2)"></input>
+        <input type="button" value="Identity 3" onclick="SetValue('Identity',3)"></input>
+        <input type="button" value="Identity 4" onclick="SetValue('Identity',4)"></input>
+        <input type="button" value="Identity 5" onclick="SetValue('Identity',5)"></input>
+      </div>
+      <div id="setQuality">
+        <input type="button" value="Quality 0" onclick="SetValue('Quality',0)"></input>
+        <input type="button" value="Quality 1" onclick="SetValue('Quality',1)"></input>
+        <input type="button" value="Quality 2" onclick="SetValue('Quality',2)"></input>
+        <input type="button" value="Quality 3" onclick="SetValue('Quality',3)"></input>
+        <input type="button" value="Quality 4" onclick="SetValue('Quality',4)"></input>
+        <input type="button" value="Quality 5" onclick="SetValue('Quality',5)"></input>
+      </div>
+    </div>
+  </p>
+</html>
