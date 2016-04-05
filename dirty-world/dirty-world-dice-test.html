@@ -48,44 +48,34 @@
       <input type="button" value="Quality 4" onclick="SetValue('Quality',4)"></input>
       <input type="button" value="Quality 5" onclick="SetValue('Quality',5)"></input>
     </div>
+    <div id="addhere"></div>
     <svg xmlns="http://www.w3.org/2000/svg"
 	 xmlns:xlink="http://www.w3.org/1999/xlink"
-	 width="100%" height="100%"
 	 version="1.1">
-      <title>My Title</title>
-      <desc>schepers, 01-04-2008</desc>
-      <circle id="circle_1" cx="75" cy="25" r="20" fill="lime" />
-      <text id='text_1' x='10' y='25' font-size='18' fill='crimson'>This is some text.</text>
-      <switch>
-	<g requiredFeatures="http://www.w3.org/TR/SVG11/feature#SVG">
-	  <!-- empty group that gets selected if UA supports SVG, so no fallback is needed -->
-	</g>
-	<g>
-	  <!-- fallback HTML equivalent that browser will render if it doesn't support the SVG switch functionality -->
-	  <img src="rasterEquivalent.png" alt="..." xmlns="http://www.w3.org/1999/xhtml"/>
-	</g>
-      </switch>
-    </svg>		
+      <circle cx="40" cy="25" r="15" fill="lime" />
+      <circle cx="75" cy="25" r="15" fill="black" />
+      <circle cx="110" cy="25" r="15" />
+    </svg>      
     <div>
       <div class="left">
-        <input type="button" value="Generosity" onclick="SetValue('Quality',ValueOf('Generosity'))"></input>
-        <br>
+        <input type="button" value="XGenerosity" onclick="SetValue('Quality',ValueOf('XGenerosity'))"></input>
+        <br/>
         <span>
-          <input type="button" value="+" onclick="bump_up('Generosity','Selfishness')"></input>
-          <input id="Generosity" type="text" value="0"></input>
-          <input type="button" value="-" onclick="bump_down('Generosity','Selfishness')"></input>
+          <input type="button" value="+" onclick="bump_up('XGenerosity','XSelfishness')"></input>
+          <input id="XGenerosity" type="text" value="0"></input>
+          <input type="button" value="-" onclick="bump_down('XGenerosity','XSelfishness')"></input>
           <input type="button" value=">" onclick="slide('Generosity','Selfishness')"></input>
         </span>
       </div>
       <div class="right">
         <span>
-          <input type="button" value="<" onclick="slide('Selfishness','Generosity')"></input>
-          <input type="button" value="-" onclick="bump_down('Selfishness','Generosity')"></input>
-          <input id="Selfishness" type="text" value="0"></input>
-          <input type="button" value="+" onclick="bump_up('Selfishness','Generosity')"></input>
+          <input type="button" value="<" onclick="slide('XSelfishness','XGenerosity')"></input>
+          <input type="button" value="-" onclick="bump_down('XSelfishness','XGenerosity')"></input>
+          <input id="XSelfishness" type="text" value="0"></input>
+          <input type="button" value="+" onclick="bump_up('XSelfishness','XGenerosity')"></input>
         </span>
-        <br>
-        <input type="button" value="Selfishness" onclick="SetValue('Quality',ValueOf('Selfishness'))"></input>
+        <br/>
+        <input type="button" value="XSelfishness" onclick="SetValue('Quality',ValueOf('XSelfishness'))"></input>
       </div>
     </div>
   </div>

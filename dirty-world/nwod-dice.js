@@ -160,9 +160,3 @@ function dirty_world_button_click(theButton)
 }
 
 
-
-
-
-function start()
-{
-}

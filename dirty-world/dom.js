@@ -12,10 +12,6 @@ function ReplaceAllChildren(parent,newchild) {
 function MakeText(text) {
     return document.createTextNode(text);
 }
-function MakeSpan() {
-  var l = document.createElement("span");
-  return l;
-}
 function MakeLabel(text) {
   var l = document.createElement("span");
   l.setAttribute("class","label");
@@ -45,13 +41,36 @@ function MakeInputOnChange(value,onchange) {
 function MakeIdedInputOnChange(id,value,onchange) {
     var i = document.createElement("input");
     i.setAttribute("type","text");
-    if (id) id.setAttribute("id",id);
+    if (id) i.setAttribute("id",id);
     if (value) i.setAttribute("value",value);
     if (onchange) i.setAttribute("onchange",onchange);
     return i;
 }
+function MakeButtonOnClick(value,onclick) {
+    var i = document.createElement("input");
+    i.setAttribute("type","button");
+    if (value) i.setAttribute("value",value);
+    if (onclick) i.setAttribute("onclick",onclick);
+    return i;
+}
 function MakeDiv() {
-  return document.createElement("div");
+    var div = document.createElement("div");
+    var args = Array.prototype.slice.call(arguments);
+    args.forEach(function (element, index, array) {
+        AppendChild(div, element);
+    });
+    return div; 
+}
+function MakeSpan() {
+    var span = document.createElement("span");
+    var args = Array.prototype.slice.call(arguments);
+    args.forEach(function (element, index, array) {
+        AppendChild(span, element);
+    });
+    return span; 
+}
+function MakeBr() {
+    return document.createElement("br");
 }
 function ValueOf( id )
 {
