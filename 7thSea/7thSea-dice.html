@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      >
+
+<head>
+  <title>7th Sea Dice Roller</title>
+
+  <script src="../dirty-world/dom.js"></script>
+  <script src="../dirty-world/nwod-dice.js"></script>
+  <script src="../dirty-world/prototype.js"></script>
+  <script src="7thSea-dice.js"></script>
+      
+</head>
+<body onload="start()">
+
+  <div align="center">
+    <div id="rollresult"></div>
+
+    <div id="rollinput">
+      <span>
+        <input type="button" value="Roll" onclick="seventh_sea_roll_button_click(this)"></input>
+        Trait: <input id="Trait" type="text" value="0"></input>
+        Skill: <input id="Skill" type="text" value="0"></input>
+        Bonus: <input id="Bonus" type="text" value="0"></input>
+      </span>
+    </div>
+    <div id="setTrait">
+      <input type="button" value="Trait 0" onclick="SetValue('Trait',0)"></input>
+      <input type="button" value="Trait 1" onclick="SetValue('Trait',1)"></input>
+      <input type="button" value="Trait 2" onclick="SetValue('Trait',2)"></input>
+      <input type="button" value="Trait 3" onclick="SetValue('Trait',3)"></input>
+      <input type="button" value="Trait 4" onclick="SetValue('Trait',4)"></input>
+      <input type="button" value="Trait 5" onclick="SetValue('Trait',5)"></input>
+    </div>
+    <div id="setSkill">
+      <input type="button" value="Skill 0" onclick="SetValue('Skill',0)"></input>
+      <input type="button" value="Skill 1" onclick="SetValue('Skill',1)"></input>
+      <input type="button" value="Skill 2" onclick="SetValue('Skill',2)"></input>
+      <input type="button" value="Skill 3" onclick="SetValue('Skill',3)"></input>
+      <input type="button" value="Skill 4" onclick="SetValue('Skill',4)"></input>
+      <input type="button" value="Skill 5" onclick="SetValue('Skill',5)"></input>
+    </div>
+  </div>
+</html>
