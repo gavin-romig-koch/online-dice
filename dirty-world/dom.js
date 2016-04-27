@@ -83,10 +83,14 @@ function ValueOf( id )
 function SetValue(id, value)
 {
     var node = document.getElementById(id);
-    if (node)
-	node.value = value;
-    else
+    if (node) {
+	node.value = AsString(value); 
+    } else
 	alert("SetValue, no such id: " + id);
+}
+function AsString(s)
+{
+    return ""+s;
 }
 function AsInt(s)
 {
