@@ -3,12 +3,21 @@ function get_random(maxNum)
   var ranNum = Math.floor((Math.random() * maxNum) + 1); 
   return ranNum; 
 }
+// Returns a random integer between min (included) and max (included)
+// Using Math.round() will give you a non-uniform distribution!
+// Copied from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+exports.get_random = get_random
 function roll_xAgain(numDice,xAgain)
 {
    var rolls = new Array(numDice);
    for (i=0; i < numDice; i=i+1)
    {
-       rolls[i] = get_random(10)+1;
+       rolls[i] = get_random(10);
        if (rolls[i] >= xAgain)
 	   numDice = numDice + 1;
    }
