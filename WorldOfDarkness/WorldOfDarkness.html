@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      >
+
+<head>
+  <title>World Of Darkness Dice Roller</title>
+
+  <script src="../dirty-world/dom.js"></script>
+  <script src="../dirty-world/nwod-dice.js"></script>
+  <script src="../dirty-world/prototype.js"></script>
+      
+</head>
+
+  <body onload="start()">
+    <h1>World Of Darkness Dice Roller</h1>
+    <div align="center">
+      <div id="rollresult"></div>
+
+      <div id="rollinput">
+        <span>
+          <input type="button" value="Roll" onclick="nwod_button_click(this)"></input>
+          Dice Pool: <input id="DicePool" type="text" value="3"></input>
+          X-Again:   <input id="xAgain" type="text" value="10" ></input>
+          Difficulty: <input id="Difficulty" type="text" value="8"></input>
+        </span>
+      </div>
+
+      <div id="setXAgain">
+        <input type="button" value="8-Again" onclick="SetValue('xAgain',8)"></input>
+        <input type="button" value="9-Again" onclick="SetValue('xAgain',9)"></input>
+        <input type="button" value="10-Again" onclick="SetValue('xAgain',10)"></input>
+      </div>
+
+      <div id="setDifficulty">
+        <input type="button" value="6 Difficulty" onclick="SetValue('Difficulty',6)"></input>
+        <input type="button" value="7 Difficulty" onclick="SetValue('Difficulty',7)"></input>
+        <input type="button" value="8 Difficulty" onclick="SetValue('Difficulty',8)"></input>
+        <input type="button" value="9 Difficulty" onclick="SetValue('Difficulty',9)"></input>
+        <input type="button" value="10 Difficulty" onclick="SetValue('Difficulty',10)"></input>
+      </div>
+    </div>
+  </body>
+</html>
