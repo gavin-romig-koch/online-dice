@@ -1,4 +1,7 @@
 
+get_random = require("../dirty-world/nwod-dice.js").get_random
+
+
 function remove_element(arr, index) {
     return arr.splice(index, 1)[0];
 }
@@ -31,9 +34,15 @@ function nested_array_as_string(arr) {
 function seventh_sea_roll(ndice)
 {
     var rolls = Array(ndice);
-    var sorted_rolls = Array(ndice);
-    for (var i=0; i < ndice; i=i+1) {
+    for (var i=0; i < rolls.length; i=i+1) {
 	rolls[i] = get_random(10);
+    }
+
+    return seventh_sea_results_for(rolls);
+}
+function seventh_sea_results_for(rolls) {
+    var sorted_rolls = Array(rolls.length);
+    for (var i=0; i < rolls.length; i=i+1) {
         sorted_rolls[i] = rolls[i];
     }
 
@@ -57,12 +66,13 @@ function seventh_sea_roll(ndice)
     result = all_sets.length;
     resultString = ((result > 0) ? "success:" : "failure:") +
         " " + result + ((result == 1) ? "raise" : " raises") +
-        "    pool " + ndice +
+        "    pool " + rolls.length +
         " (" + rolls.toString() + ")" +
         " " + nested_array_as_string(all_sets);
 
     return [result, resultString];
 }
+module.exports.seventh_sea_roll = seventh_sea_roll;
 
 function seventh_sea_roll_button_click(theButton)
 {
