@@ -11,7 +11,7 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-exports.get_random = get_random
+//module.exports.get_random = get_random
 function roll_xAgain(numDice,xAgain)
 {
    var rolls = new Array(numDice);
