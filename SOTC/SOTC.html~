@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      >
+
+<head>
+  <title>Simple SOCT Dice</title>
+
+  <script src="dom.js"></script>
+  <script src="nwod-dice.js"></script>
+  <script src="prototype.js"></script>
+</head>
+<body onload="start()">
+
+<div align="center">
+  <div id="rollresult"></div>
+
+  <div id="rollinput">
+    <span>
+      <input type="button" value="Roll" onclick="bernd_button_click(this)"></input>
+      Skill: <input id="Skill" type="text" value="0"></input>
+      Difficulty: <input id="Difficulty" type="text" value="0"></input>
+    </span>
+  </div>
+  <div id="setSkill">
+    <input type="button" value="-2 Terrible" onclick="SetValue('Skill',-2)"></input>
+    <input type="button" value="-1 Poor" onclick="SetValue('Skill',-1)"></input>
+    <input type="button" value="0 Mediocre" onclick="SetValue('Skill',0)"></input>
+    <input type="button" value="1 Average" onclick="SetValue('Skill',1)"></input>
+    <input type="button" value="2 Fair" onclick="SetValue('Skill',2)"></input>
+    <input type="button" value="3 Good" onclick="SetValue('Skill',3)"></input>
+    <input type="button" value="4 Great" onclick="SetValue('Skill',4)"></input>
+    <input type="button" value="5 Superb" onclick="SetValue('Skill',5)"></input>
+    <input type="button" value="6 Fantastic" onclick="SetValue('Skill',6)"></input>
+    <input type="button" value="7 Epic" onclick="SetValue('Skill',7)"></input>
+    <input type="button" value="8 Legendary" onclick="SetValue('Skill',8)"></input>
+  </div>
+  <div id="setDifficulty">
+    <input type="button" value="-2 Trivial" onclick="SetValue('Difficulty',-2)"></input>
+    <input type="button" value="-1 Easy" onclick="SetValue('Difficulty',-1)"></input>
+    <input type="button" value="0 Mediocre" onclick="SetValue('Difficulty',0)"></input>
+    <input type="button" value="1 Average" onclick="SetValue('Difficulty',1)"></input>
+    <input type="button" value="2 Fair" onclick="SetValue('Difficulty',2)"></input>
+    <input type="button" value="3 Good" onclick="SetValue('Difficulty',3)"></input>
+    <input type="button" value="4 Great" onclick="SetValue('Difficulty',4)"></input>
+    <input type="button" value="5 Superb" onclick="SetValue('Difficulty',5)"></input>
+    <input type="button" value="6 Fantastic" onclick="SetValue('Difficulty',6)"></input>
+    <input type="button" value="7 Epic" onclick="SetValue('Difficulty',7)"></input>
+    <input type="button" value="8 Legendary" onclick="SetValue('Difficulty',8)"></input>
+  </div>
+  <div>
+	<input type="button" value="0 Academics"	    onClick="SetValue('Skill',0)"     base="Knowledge"          ></input>
+	<input type="button" value="1 Alertness"	    onClick="SetValue('Skill',1)"     base="Perception"	  	 ></input>
+	<input type="button" value="0 Art"		        onClick="SetValue('Skill',0)"     base="Craft/Knowledge"	 ></input> 
+	<input type="button" value="2 Athletics"	    onClick="SetValue('Skill',2)"     base="Physical"	  		 ></input>
+	<input type="button" value="0 Burglary"	       	onClick="SetValue('Skill',0)"     base="Subterfuge"	  	 ></input>
+	<input type="button" value="1 Contacting"	    onClick="SetValue('Skill',1)"     base="Social"		  	 ></input>
+	<input type="button" value="0 Deceit"	       	onClick="SetValue('Skill',0)"     base="Social"		  	 ></input>
+	<input type="button" value="1 Drive"	       	onClick="SetValue('Skill',1)"     base="Mundane"		  	 ></input>
+	</div><div>
+	<input type="button" value="2 Empathy"	       	onClick="SetValue('Skill',2)"     base="Social/Perception"  ></input>
+	<input type="button" value="3 Endurance"	    onClick="SetValue('Skill',3)"     base="Physical"	  		 ></input>
+	<input type="button" value="5 Engineering"	    onClick="SetValue('Skill',5)"     base="Craft"		  		 ></input>
+	<input type="button" value="0 Fists"	       	onClick="SetValue('Skill',0)"     base="Combat"		  	 ></input>
+	<input type="button" value="0 Gambling"	       	onClick="SetValue('Skill',0)"     base="Mundane"		  	 ></input>
+	<input type="button" value="4 Guns"		       	onClick="SetValue('Skill',4)"     base="Combat"		  	 ></input>
+	<input type="button" value="0 Intimidation"	    onClick="SetValue('Skill',0)"     base="Social"		  	 ></input>
+	<input type="button" value="3 Investigation"    onClick="SetValue('Skill',3)"     base="Perception"	  	 ></input>
+	</div><div>
+	<input type="button" value="4 Leadership"	    onClick="SetValue('Skill',4)"     base="Social"		  	 ></input>
+	<input type="button" value="0 Might"	       	onClick="SetValue('Skill',0)"     base="Physical"	  		 ></input>
+	<input type="button" value="1 Mysteries"	    onClick="SetValue('Skill',1)"     base="Knowledge"	  		 ></input>
+	<input type="button" value="0 Pilot"	       	onClick="SetValue('Skill',0)"     base="Mundane"		  	 ></input>
+	<input type="button" value="2 Rapport"	       	onClick="SetValue('Skill',2)"     base="Social"		  	 ></input>
+	<input type="button" value="3 Resolve"	       	onClick="SetValue('Skill',3)"     base="Social"		  	 ></input>
+	<input type="button" value="0 Resources"	    onClick="SetValue('Skill',0)"     base="Mundane"		  	 ></input>
+	<input type="button" value="0 Science"	       	onClick="SetValue('Skill',0)"     base="Knowledge"	  		 ></input>
+	</div><div>
+	<input type="button" value="0 Sleight of Hand"  onClick="SetValue('Skill',0)"     base="Subterfuge"	  	 ></input>
+	<input type="button" value="1 Stealth"	       	onClick="SetValue('Skill',1)"     base="Subterfuge"	  	 ></input>
+	<input type="button" value="0 Survival"	       	onClick="SetValue('Skill',0)"     base="Mundane"		  	 ></input>
+	<input type="button" value="2 Weapons"	       	onClick="SetValue('Skill',2)"     base="Combat"             ></input>
+  </div>
+</div>
+</html>
